@@ -2,7 +2,10 @@ package com.hitch.controller;
 
 import java.text.ParseException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -34,7 +37,42 @@ public class HitchedController {
 		model.addAttribute("message", "This is the welcome Page");
 		return "index";
 	}
-	
+
+    /*SendMail sendMail =new SendMail();*/
+    /*WellnessUtils wellnessUtils=new WellnessUtils();*/
+    
+    @RequestMapping(value = "/jdbcCrudes", method = RequestMethod.GET)
+    public String services(Model model) {
+         /*model.addAttribute("attribs", hitchedService.jdbcDbConnect("bdgroom@att.net"));*/
+              
+        return "jdbcCrudes";
+    }
+    
+    /*@RequestMapping("email-lookup")
+    public String handlepost(@ModelAttribute("email-lookup") UserLogin userLogin, BindingResult bindingResult, ModelMap model) throws ParseException{    	
+    		    	 
+	    	 try {
+		    		 if(hitchedService.findUser(userLogin.getEmailAddress())== true){
+		    			 model.addAttribute("attribs", hitchedService.getUserByEmailId(userLogin.getEmailAddress()));
+			    		UserLogin userdetail= hitchedService.getUserByEmailId(userLogin.getEmailAddress());
+			    		//model.addAttribute("attribs", userdetail);
+		    		 }else{
+		    			 model.addAttribute("error", "User email does noe exist in the Data base"); 
+		    		 }		    		 
+			     }
+				 catch(EmptyResultDataAccessException e){
+					
+					 }catch(RuntimeException e) {						
+						model.addAttribute("error", "Unexpected error occured");
+						e.printStackTrace();
+					    
+				  }
+    	 
+    	 
+         return "services";
+    	
+    }*/
+
 	@RequestMapping("signupMember")
 	public String signupMember(@ModelAttribute("signupMember") UserLogin userLogin, BindingResult bindingResult,
 			ModelMap model) throws ParseException {
@@ -88,6 +126,55 @@ public class HitchedController {
 		return "login";
 
 	}
+
+	// this is a test copy of the signups function (uses registration.jsp) using Spring validation
+	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+	public String registration(Model model) {
+		model.addAttribute("registration", new UserLogin());
+
+		return "registration";
+	}
+	
+	@RequestMapping(value = "/registration", method = RequestMethod.POST)
+       public String registration(@Valid @ModelAttribute("registration")
+       UserLogin userLogin, BindingResult result, Model model) {
+       
+       if (result.hasErrors()) {
+    return "registration";
+       }
+        if(hitchedService.findUser(userLogin.getEmailAddress())== true){
+       model.addAttribute("error", "A user exists with the supplied email "+userLogin.getEmailAddress()+" <a href='forgotpassword'> Forgot Password click here </a>"); 
+                  return "registration";  
+         }
+          if(userLogin.getPassword().equals(userLogin.getPasswordConfirm())){
+        	  hitchedService.createUser(userLogin);
+    
+    }else{
+    model.addAttribute("error", "These Passwords don't matching ");
+    }
+          
+             return "redirect:/login";
+       }	
+	
+	// end of code added for test copy
+	@RequestMapping("about")
+    public String about(Model model) {
+    	
+		model.addAttribute("message", "This is the About Us Page");
+    	/*model.addAttribute("addresses", locationService.getAllAddresses());*/
+    	
+        return "about";
+    }
+    
+    
+    @RequestMapping(value = "/contact", method = RequestMethod.GET)
+    public String contact(Model model) {
+    	model.addAttribute("sendEmail", new UserLogin());
+    	model.addAttribute("message", "Welcome to Gettin Hitched, please drop us an email"); 
+    	
+        return "contact";
+    }
+    
 
 /* @RequestMapping(value="/submitStudentDetails", method= RequestMethod.POST)
  private String submitStudent(Model model, @ModelAttribute("student") Student student){

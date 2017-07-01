@@ -40,11 +40,11 @@
 					<div class="navbar-collapse collapse" background = "">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li class="active"><a href="#">Home</a></li>
+								<li class="active"><a href="/">Home</a></li>
 								<!-- <li class="active"><a href="index">Home</a></li> -->
-								<li><a href="#signups">Sign up</a></li>
-								<li><a href="#login">login</a></li>	
-								<li><a href="#services">Reviews</a></li>							
+								<li><a href="signups">Sign up</a></li>
+								<li><a href="login">login</a></li>	
+								<li><a href="services">Reviews</a></li>							
 						        <li>
 						        <%-- <form class="navbar-form navbar-right" role="search"  action="Lookupcity" method="post">
 										    <div class="input-group add-on">										      
@@ -81,6 +81,12 @@
 			able to add a website or enter a review.</h3>
 			<%-- <h2>Message: ${message}</h2> --%>
 		</div>
+
+		<div class="panel-body">
+			<a class="btn btn-primary" href="signups">Sign up » </a> <a
+				class="btn btn-primary" href="login">Login » </a>
+		<h3>${success}</h3>
+		</div>
 	<br>
 	<div class="slider">
 		<div class="img-responsive">
@@ -91,7 +97,7 @@
 		</div>
 		
 		
-    </div>
+    <%-- </div>
 						        <form class="navbar-form navbar-right" role="search"  action="Lookupcity" method="post">
 										    <div class="input-group add-on">										      
 										      <input type="text" class="form-control" placeholder="Search City or Zip" name="Lookupcity" id="Lookupcity" SIZE='15'>
@@ -103,13 +109,13 @@
 									 </form>
 						        </li>	
 
-	</div>
+	</div> --%>
 	<!-- /.container -->
 	 <footer  style="background-color: #DAF7A6; position: relative; bottom:0;width:100%;" >						
 				<div class="col-md-5 col-md-offset-5">
 				<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li ><a href="index">Home</a></li>
+								<li ><a href="/">Home</a></li>
 								<li><a href="about">About Us</a></li>																
 								<li><a href="contact">Contact Us</a></li>	
 						        

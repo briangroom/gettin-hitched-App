@@ -16,21 +16,52 @@ public class HitchedService {
 	@Autowired
 	HitchedRepository hitchedRepository;
 	
+	@Autowired
+	UserLogin userLogin;
+	
 	//users
 	public boolean findUser(String email){
-		if (this.hitchedRepository.exists(email))
-			return true;
-		else
-			return false;
+		if (this.hitchedRepository.exists(email)){
+			return true;}
+		else{
+			return false;}
 		}	
 	public void createUser(UserLogin userLogin){
 		this.hitchedRepository.save(userLogin);
 		}
 	
+	/*public JSONObject jdbcDbConnect(String email){
+		if(this.hitchedRepository.exists(email)){
+			return true;}
+		else{
+			return false;}
+
+		}*/
+	
+	public void updateUser(UserLogin userLogin){
+		this.hitchedRepository.save(userLogin);
+		}
+	
+	/*public void deleteUserById(long id){
+		this.hitchedRepository.delete(id);
+		}*/
+
+    /*public List<UserLogin> getAllusers(){
+		this.hitchedRepository.findAll();
+		return List<UserLogin>;
+		}
+
+    public UserLogin getUserByEmailId(String email){
+		this.hitchedRepository.findOne(email);
+		return UserLogin;
+		}*/
+
+	
 /*	public UserLogin updateUser(UserLogin userLogin);	
 	public void deleteUserById(long id);
     public List<UserLogin> getAllusers();
     public UserLogin getUserByEmailId(String email);
+    
     public UserLogin getUserById(long id);
     public void updaterole(UserLogin userLogin, String role, long id);   
     public void passReset(UserLogin userLogin, String pass, String email);
@@ -40,7 +71,6 @@ public class HitchedService {
     public List<UserLogin> getUserByName(String user);
     public List<UserLogin> lookupCity(String cityOrZip);
     
-    public JSONObject jdbcDbConnect(String email);
 */
 	/*public void createAddress(Addresses addresses){
 		this.hitchedRepository.save(addresses);

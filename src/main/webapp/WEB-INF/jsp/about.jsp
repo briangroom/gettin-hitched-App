@@ -31,9 +31,8 @@
 				<div class="navbar-collapse collapse">
 					<div class="menu">
 						<ul class="nav nav-tabs" role="tablist">
-							<li><a href="index">Home</a></li>
+							<li><a href="/">Home</a></li>
 							<li class="active"><a href="about">About Us</a></li>
-							<li><a href="contact">Contact Us</a></li>
 							<li><a href="signups">Sign up</a></li>
 							<li><a href="services">Look-Ups</a></li>
 							<li><a href="login">login</a></li>
@@ -51,96 +50,18 @@
 		<br>
 		<div class="text-center">
 			<div class="text-success">
-				<h3 class="panel-title">About Wellness Club</h3>
+				<h3 class="panel-title">About Gettin Hitched App</h3>
 				<br>
 			</div>
 
 		</div>
-		<p>Accessories and Gym Equipment Let FreeTrainers open the world
-			of personal accessories for fitness as well as home and gym equipment
-			which you will need and interact with during your workouts. Many of
-			these are essential and quite beneficial in helping you build the
-			proper weight training plan that will help you reach your health &
-			fitness goals! Clothing for exercise Whenever you go to the gym to
-			exercise, you need to be comfortable. Something light which doesn't
-			constrict your range of motion. Try a pair of shorts or gym pants
-			with a tank top or t-shirt is appropriate. It is important to keep
-			your muscles warm because it will aid with your blood flow to them.
-			Please do not dress to train as if you are ready to go to a night
-			club! Remember that the purpose of going to the gym is to exercise,
-			not cause a fashion statement. For your feet, wear shoes which will
-			not slip and slide on the ground as well as give your foot proper
-			support. However, you may wear sandals or go bare foot if the
-			exercise permits this and this is to your preference. Please train
-			safely at all times. Wraps Wraps are used to support your joints. You
-			can use them on you knees and elbows preferably. They will add
-			support to these joints if they are unstable. Wraps are usually used
-			for heavy training where the extra support is needed. They are also
-			used when your joints are sore to relieve the stress during exercise.
-			Gloves Gloves are used to aid in your grip from slipping and to help
-			to prevent the build up of callases on the palms. We a
-			FreeTrainers.com do not recommend the use of gloves because they
-			weaken your grip over time. A glove less grip is much more secure and
-			tight. Wrist Straps The use of wrist straps is to aid you in your
-			exercises. They take away the strength needed in your grip so you can
-			perform a few more reps. They are quite beneficial in very heavy
-			movements. There is however a negative aspect to wrist straps; which
-			is that you are neglecting the development of your hand grip and
-			forearms. It is then preferable to go without them in the long run.
-			Clothing for exercise Whenever you go to the gym to exercise, you
-			need to be comfortable. Something light which doesn't constrict your
-			range of motion. Try a pair of shorts or gym pants with a tank top or
-			t-shirt is appropriate. It is important to keep your muscles warm
-			because it will aid with your blood flow to them. Please do not dress
-			to train as if you are ready to go to a night club! Remember that the
-			purpose of going to the gym is to exercise, not cause a fashion
-			statement. For your feet, wear shoes which will not slip and slide on
-			the ground as well as give your foot proper support. However, you may
-			wear sandals or go bare foot if the exercise permits this and this is
-			to your preference. Please train safely at all times. Weight Lifting
-			Belt It is very important to use a weight lifting belt for exercise
-			that need support for the lower back. The use of the weight lifting
-			belt is often used for heavy squats. It is very important to keep in
-			mind that the you should not wear the belt for EVERY exercise, since
-			not all movements require its use. Free Weights Free weights are
-			basically dumbbells and barbells. They are weights which are not
-			attached to any machines, but free.</p>
+		<p>The Gettin' Hitched App is here to bring all your wedding planning to one 
+		 place. With our app you can find and book all your needs in one place including 
+		 venues, photographers, florists, cakes, caterers, entertainers, and bar services.
+		 We're here for you. </p>
 
-		<div class="panel-body">
-			<a class="btn btn-primary" href="signups">Sign up » </a> <a
-				class="btn btn-primary" href="login">Login » </a>
-				
-		<h3>${success}</h3>
-		</div>
 	</div>
 			
-	<div class="pull-right" style="background-color: #DAF7A6">
-		<div class="text-info">
-			<h3><br> Club Locations and <br>Contact information
-			    <br> ____________________
-			</h3>
-			<%-- <h3>${success}<br> Club Locations and <br>Contact information
-			    <br> ____________________
-			</h3> --%>
-		</div>
-	
-		<c:forEach items="${addresses}" var="item">
-			<div>
-				<a title="Delete location"
-					href="deleteClub?id=<c:out value='${item.id}'/>"><span
-					class="glyphicon glyphicon-trash"></span>
-				<c:out value="${item.bname}" /></a> <br>
-				<c:out value="${item.address}" />
-				<br>
-				<c:out value="${item.city}, " />
-				<c:out value="${item.state} "/>
-				<c:out value="${item.zip}" />
-				<br>
-				<c:out value="${item.tel}" />
-			</div>
-			<br>
-		</c:forEach>
-		</div>
 		</div>
 	</div>
 
@@ -149,12 +70,9 @@
 		<div class="col-md-5 col-md-offset-5">
 			<div class="menu">
 				<ul class="nav nav-tabs" role="tablist">
-					<li><a href="index">Home</a></li>
+					<li><a href="/">Home</a></li>
 					<li><a href="about">About Us</a></li>
 					<li><a href="contact">Contact Us</a></li>
-					<li><a href="signups">Sign up</a></li>
-					<li><a href="login">login</a></li>
-					<li><a href="services">Look-Ups</a></li>
 
 				</ul>
 
