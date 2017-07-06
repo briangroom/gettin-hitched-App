@@ -7,7 +7,6 @@
 @import url('animate.css');
 
 
-
 body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-size:14px;
@@ -142,6 +141,15 @@ a:hover {
 	-webkit-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 }
+
+.HomePage { 
+  background: url(images/wedding1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} 
+
 
 .slider {
 	margin-top:-20px;

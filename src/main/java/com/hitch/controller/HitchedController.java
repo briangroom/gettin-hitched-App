@@ -1,6 +1,8 @@
 package com.hitch.controller;
 
 import java.text.ParseException;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -18,11 +20,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.hitch.entity.Student;
 import com.hitch.entity.UserLogin;
+import com.hitch.hitchUtils.HitchUtils;
+import com.hitch.hitchUtils.States;
+import com.hitch.hitchUtils.States.Days;
 import com.hitch.repository.HitchedRepository;
 import com.hitch.service.HitchedService;
-
 
 @Controller
 @SessionAttributes("emailAddress")
@@ -39,7 +42,7 @@ public class HitchedController {
 	}
 
     /*SendMail sendMail =new SendMail();*/
-    /*WellnessUtils wellnessUtils=new WellnessUtils();*/
+    HitchUtils hitchUtils=new HitchUtils();
     
     @RequestMapping(value = "/jdbcCrudes", method = RequestMethod.GET)
     public String services(Model model) {
@@ -48,7 +51,70 @@ public class HitchedController {
         return "jdbcCrudes";
     }
     
-    /*@RequestMapping("email-lookup")
+	@RequestMapping(value = "/signups", method = RequestMethod.GET)
+	public String signups(Model model) {
+		model.addAttribute("signupMember", new UserLogin());
+		/*logger.info("#######################signup out : ");*/
+
+		return "signups";
+	}
+
+	
+	@RequestMapping("signupMember")
+	public String signupMember(@ModelAttribute("signupMember") UserLogin userLogin, BindingResult bindingResult,
+			ModelMap model) throws ParseException {
+		//String msg = "Welcome to wellness Login now <a href='http://localhost:8080/wellness/login'>Login </a>";
+		try {
+			if (hitchedService.findUser(userLogin.getEmailAddress()) == false) {
+				if (userLogin.getPassword().equals(userLogin.getPasswordConfirm())) {
+					hitchedService.createUser(userLogin);
+					model.addAttribute("message",
+							"Welcome " + userLogin.getFname() + " Login now <a href='login'>Login </a>");
+
+					try {
+						/*sendMail.sendMails(userLogin.getEmailAddress(), "Welcome to wellness ", msg);*/
+						model.addAttribute("success",
+								"Confirmation email has been sent to " + userLogin.getEmailAddress() + " thanks");
+
+					} catch (Exception e) {
+						model.addAttribute("error",
+								"Error sending confirmation email to " + userLogin.getEmailAddress());
+					}
+
+					return "login";
+				} else {
+					model.addAttribute("error", "Password not matching ");
+				}
+
+			} else {
+				model.addAttribute("error", "A user exists with the supplied email " + userLogin.getEmailAddress()
+						+ " <a href='forgotpassword'> Forgot Password click here </a>");
+
+			}
+
+		} catch (RuntimeException e) {
+			model.addAttribute("error", "Unexpected error occured");
+			/*logger.error("Sorry, Unexpected error occured!", e);*/
+			e.printStackTrace();
+
+		}
+
+		return "signups";
+
+	}
+
+	@RequestMapping("signup")
+	public String signup(@ModelAttribute("signup") UserLogin userLogin, BindingResult bindingResult, ModelMap model)
+			throws ParseException {
+		String msg = "Welcome to the Gettin Hitched Login page <a href='http://localhost:8080/hitched/login'>Login </a>";
+
+		model.addAttribute("message", "Hello " + userLogin.getFname() + " Login now <a href='login'>Login </a>");
+
+		return "login";
+
+	}
+
+	/*@RequestMapping("email-lookup")
     public String handlepost(@ModelAttribute("email-lookup") UserLogin userLogin, BindingResult bindingResult, ModelMap model) throws ParseException{    	
     		    	 
 	    	 try {
@@ -73,59 +139,6 @@ public class HitchedController {
     	
     }*/
 
-	@RequestMapping("signupMember")
-	public String signupMember(@ModelAttribute("signupMember") UserLogin userLogin, BindingResult bindingResult,
-			ModelMap model) throws ParseException {
-		String msg = "Welcome to Gettin' Hitched Login now <a href='http://localhost:8080/wellness/login'>Login </a>";
-		try {
-			if (hitchedService.findUser(userLogin.getEmailAddress()) == false) {
-				if (userLogin.getPassword().equals(userLogin.getPasswordConfirm())) {
-					hitchedService.createUser(userLogin);
-					model.addAttribute("message",
-							"Welcome " + userLogin.getFname() + " Login now <a href='login'>Login </a>");
-
-					try {
-						//sendMail.sendMails(userLogin.getEmailAddress(), "Welcome to wellness ", msg);
-						model.addAttribute("success",
-								"Confirmation email has been sent to " + userLogin.getEmailAddress() + " thanks");
-
-					} catch (Exception e) {
-						model.addAttribute("error",
-								"Error sending confirmation email to " + userLogin.getEmailAddress());
-					}
-
-					return "login";
-				} else {
-					model.addAttribute("error", "Password not matching ");
-				}
-
-			} else {
-				model.addAttribute("error", "A user exists with the supplied email " + userLogin.getEmailAddress()
-						+ " <a href='forgotpassword'> Forgot Password click here </a>");
-
-			}
-
-		} catch (RuntimeException e) {
-			model.addAttribute("error", "Unexpected error occured");
-			//logger.error("Sorry, Unexpected error occured!", e);
-			e.printStackTrace();
-
-		}
-
-		return "signups";
-
-	}
-
-	@RequestMapping("signup")
-	public String signup(@ModelAttribute("signup") UserLogin userLogin, BindingResult bindingResult, ModelMap model)
-			throws ParseException {
-		String msg = "Welcome to Gettin' Hitched Login now <a href='http://localhost:8080/wellness/login'>Login </a>";
-
-		model.addAttribute("message", "Hello " + userLogin.getFname() + " Login now <a href='login'>Login </a>");
-
-		return "login";
-
-	}
 
 	// this is a test copy of the signups function (uses registration.jsp) using Spring validation
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
@@ -150,7 +163,7 @@ public class HitchedController {
         	  hitchedService.createUser(userLogin);
     
     }else{
-    model.addAttribute("error", "These Passwords don't matching ");
+    model.addAttribute("error", "Incorrect password");
     }
           
              return "redirect:/login";
@@ -160,7 +173,7 @@ public class HitchedController {
 	@RequestMapping("about")
     public String about(Model model) {
     	
-		model.addAttribute("message", "This is the About Us Page");
+		model.addAttribute("message", "This is the Gettin Hitched About Us Page");
     	/*model.addAttribute("addresses", locationService.getAllAddresses());*/
     	
         return "about";
@@ -175,6 +188,96 @@ public class HitchedController {
         return "contact";
     }
     
+	@ModelAttribute("states")
+	public List<States> populateStates() {
+		return Arrays.asList(States.values());
+	}
+
+	@ModelAttribute("days")
+	public Days[] day() {
+		return Days.values();
+	}
+	
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(Model model) {
+		/*logger.info("someone logg in out : ");
+		if (logger.isDebugEnabled()) {
+			logger.debug("logout out : ");
+		}*/
+
+		model.addAttribute("msg", "You have been logged out!");
+		return "login";
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+
+		/*logger.info("called  log in : ");
+
+		if (logger.isDebugEnabled()) {
+			logger.debug("This is debug : ");
+		}
+
+		logger.debug("someone logg in out : ");*/
+
+		model.addAttribute("loginMember", new UserLogin());
+		model.addAttribute("msg", "Login to explore the complete features!");
+		return "login";
+	}
+
+	@RequestMapping(value = "/loginUser", method = RequestMethod.GET)
+	public String loginuser(Model model) {
+
+		model.addAttribute("newlogin", new UserLogin());
+		model.addAttribute("msg", "New login for test!");
+		return "loginUser";
+	}
+
+	// @RequestMapping(value = "/newlogin", method = RequestMethod.POST)
+		// since 'POST' is in the jsp, I don't need it here
+	@RequestMapping("newlogin")
+	public String newlogin(@ModelAttribute("newlogin") UserLogin user, ModelMap model) throws ParseException {
+
+		/*logger.info("user logged in : " + user.getEmailAddress());*/
+
+		try {
+
+			UserLogin userdetail = hitchedService.getUserByEmailId(user.getEmailAddress());
+
+			if (validateLogin(user.getEmailAddress(), user.getPassword())) {
+				model.addAttribute("success", "Welcome " + userdetail.getFname());
+				model.addAttribute("attribs", userdetail);
+				model.addAttribute("user", userdetail.getFname());
+				model.addAttribute("role", userdetail.getRoles());
+
+				return "profile";
+
+			} else {
+				model.addAttribute("error", "Invalid credentials try again ");
+			}
+		} 
+		 catch (EmptyResultDataAccessException e) {
+			model.addAttribute("error",
+					"User " + user.getEmailAddress() + " does not exists <a href='signups'>Sign up </a>");
+		}  
+		catch (RuntimeException e) {
+			model.addAttribute("error", "Unexpected error occured");
+			e.printStackTrace();
+
+		}
+
+		return "login";
+	}
+
+	public boolean validateLogin(String uname, String pswd) {
+		UserLogin dbCredentials = hitchedService.getUserByEmailId(uname);
+		if (!(uname.equals(dbCredentials.getEmailAddress()) && pswd.equals(dbCredentials.getPassword()))) {
+			return false;
+		} else
+			return true;
+	}
+
 
 /* @RequestMapping(value="/submitStudentDetails", method= RequestMethod.POST)
  private String submitStudent(Model model, @ModelAttribute("student") Student student){
@@ -194,7 +297,8 @@ public class HitchedController {
  
 	/*@Override
 	public long createUser(UserLogin userLogin) {
-		return wellnessDao.createUser(userLogin);
+	       model.addAttribute("error", "A user exists with the supplied email "+userLogin.getEmailAddress()+" <a href='forgotpassword'> Forgot Password click here </a>"); 
+		return HitchedService.createUser(userLogin);
 	}
 
 	@Override

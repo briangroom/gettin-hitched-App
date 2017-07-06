@@ -36,7 +36,7 @@
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li ><a href="index">Home</a></li>
+								<li ><a href="/">Home</a></li>
 								<li><a href="signups">Sign up</a></li>
 								<li><a href="services">Look-Ups</a></li>
 								<li class="active"><a href="login">login</a></li>				
@@ -102,7 +102,7 @@
 				<div class="col-md-5 col-md-offset-3">
 				<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li ><a href="index">Home</a></li>
+								<li ><a href="/">Home</a></li>
 								<li><a href="about">About Us</a></li>																
 								<li><a href="contact">Contact Us</a></li>	
 						        

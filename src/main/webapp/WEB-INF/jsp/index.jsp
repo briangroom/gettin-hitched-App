@@ -6,7 +6,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="${contextPath}/resources/css/animate.css">
 	<link rel="stylesheet" href="${contextPath}/resources/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 	<link href="${contextPath}/resources/css/prettyPhoto.css" rel="stylesheet" />
+	<link href="${contextPath}/resources/css/style.css" rel="stylesheet" />
  
 </head>
 <body>
