@@ -2,7 +2,6 @@ package com.hitch.service;
 
 import java.util.List;
 
-//import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,33 +26,33 @@ public class HitchedService {
 		}	
 	
 	public void createUser(UserLogin userLogin){
-		this.hitchedRepository.save(userLogin);
-		}
+		 hitchedRepository.save(userLogin);
+	}
 	
-	/*public JSONObject jdbcDbConnect(String email){
-		if(this.hitchedRepository.exists(email)){
-			return true;}
-		else{
-			return false;}
+	
 
-		}*/
-	
 	public void updateUser(UserLogin userLogin){
 		this.hitchedRepository.save(userLogin);
 		}
 	
-	/*public void deleteUserById(long id){
-		this.hitchedRepository.delete(id);
-		}*/
-
     public List<UserLogin> getAllusers(){
 		return this.hitchedRepository.findAll();
+		}
+
+	public void deleteUserById(UserLogin userLogin){
+		this.hitchedRepository.delete(userLogin);
 		}
 
     public UserLogin getUserByEmailId(String email){
 		return this.hitchedRepository.findOne(email);
 	}
 
+    public void updateUserByEmail(UserLogin userLogin, String emailAddress){
+		 this.hitchedRepository.save(userLogin);
+    }
+
+    
+    
 	
 /*	public UserLogin updateUser(UserLogin userLogin);	
 	public void deleteUserById(long id);

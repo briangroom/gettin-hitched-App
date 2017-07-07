@@ -36,9 +36,7 @@
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li ><a href="index">Home</a></li>
-								<li><a href="about">About Us</a></li>																
-								<li><a href="contact">Contact Us</a></li>	
+								<li ><a href="/">Home</a></li>
 								<li><a href="signups">Sign up</a></li>
 								<li><a href="services">Look-Ups</a></li>
 								<li class="active"><a href="login">login</a></li>				
@@ -52,7 +50,7 @@
 	<div class="container">
 		 
 			<div>
-				<h1 style="color: #008000">Welcome to wellness club</h1>
+				<h1 style="color: #008000">Welcome to the Gettin Hitched App</h1>
 				<h3 style="color: #008000">${msg} </h3>
 				<h2 style="color: #008000">${message}</h2>
 				<h2 style="color: #008000">${success} </h2>
@@ -88,7 +86,7 @@
 
 							<div class="col-lg-9 col-lg-offset-3">									
 									<button class="btn btn-primary">Login</button>
-									<a href="index" class="btn btn-primary" role="button">Cancel</a>
+									<a href="/" class="btn btn-primary" role="button">Cancel</a>
 									<a href="forgotpassword" class="btn btn-primary" role="button">Forgot Password</a>
 								</div>	
 							</fieldset>
@@ -104,12 +102,9 @@
 				<div class="col-md-5 col-md-offset-3">
 				<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li ><a href="index">Home</a></li>
+								<li ><a href="/">Home</a></li>
 								<li><a href="about">About Us</a></li>																
 								<li><a href="contact">Contact Us</a></li>	
-								<li><a href="signups">Sign up</a></li>
-								<li><a href="login">login</a></li>	
-								<li><a href="services">Look-Ups</a></li>							
 						        
 							</ul>
 							

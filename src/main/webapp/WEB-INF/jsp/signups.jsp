@@ -101,13 +101,13 @@
                            
                      </div>
                      
-                     <div class="col-md-4">
+                     <!-- <div class="col-md-4">
                            <div class="form-group">
                               <label for="ad" id='ead'>Address*</label>
                               <input type=text id="address" name="address" class="form-control input-sm" placeholder="Address" > 
                            </div>
                            
-                     </div>
+                     </div> -->
                      
                      <div class="col-md-2">
                            <div class="form-group">
@@ -130,7 +130,7 @@
 					</div>
 				    </div>
 				    
-                    <div class="col-md-2">
+                    <!-- <div class="col-md-2">
                            <div class="form-group">
                               <label for="tl" id='etl'> Zip</label>
                               <input type=text id="zip" name="zip" class="form-control input-sm" placeholder="Job Title" > 
@@ -138,16 +138,16 @@
                            <div id='etl'>
                            
                            </div>
-                     </div>
+                     </div> -->
     
                      
-                     <div class="col-md-2">
+                     <!-- <div class="col-md-2">
                            <div class="form-group">
                               <label for="tel" id='etel'>Telephone*</label>
                               <input type=text id="tel" name="tel" class="form-control input-sm" placeholder="Telephone" > 
                            </div>
                            
-                     </div>
+                     </div> -->
                      
                      <div class="col-md-4">
                            <div class="form-group">
@@ -157,17 +157,17 @@
 							    </div>                           
                      </div>
                      
-                     <div class="col-md-2">
+                     <!-- <div class="col-md-2">
                            <div class="form-group">
                               <label for="ag" id='eag' >Age*</label>
                               <input type='number' id="age" name="age" class="form-control input-sm" placeholder="Age"  min="21"> 
                            </div>
                            
-                     </div>
+                     </div> -->
                      
                      
                      
-                     <div class="col-md-4">
+                     <!-- <div class="col-md-4">
                            <div class="form-group">
                            <label for="subscription" id='subscription'>Subscription Type</label>
                               <select name="subscription" id="subscription" class="form-control input-sm">
@@ -177,7 +177,7 @@
                                                   <option value="Free Trial" selected>2 week Free trial</option>                                           
                                                  </select>                       
                            </div>                           
-                     </div>
+                     </div> -->
                      
                     
                      <div class="col-md-3">
