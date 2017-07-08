@@ -19,7 +19,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name = "userLogin")
 public class UserLogin {
 
-	@Id
 	@Column(name="id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -43,6 +42,7 @@ public class UserLogin {
 	//@Pattern(regexp = "([a-zA-Z0-9]+([ ][a-zA-Z0-9])*)+", message = "Please select State")
 	private String state;
 
+	@Id
 	@Column(name="emailAddress")
 	@NotEmpty(message = "Email Address required")
 	//@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$", message = "Invalid Email Use format JohnSmith@sbc.com")

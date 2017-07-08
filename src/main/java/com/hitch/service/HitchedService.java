@@ -19,11 +19,8 @@ public class HitchedService {
 	
 	//users
 	public boolean findUser(String email){
-		if (this.hitchedRepository.exists(email)){
-			return true;}
-		else{
-			return false;}
-		}	
+		return this.hitchedRepository.exists(email);
+	}
 	
 	public void createUser(UserLogin userLogin){
 		 hitchedRepository.save(userLogin);

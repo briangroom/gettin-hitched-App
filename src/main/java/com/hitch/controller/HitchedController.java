@@ -61,7 +61,7 @@ public class HitchedController {
 	}
 
 	
-	@RequestMapping("/signupMember")
+	/*@RequestMapping("/signupMember")
 	public String signupMember(@ModelAttribute("signupMember") UserLogin userLogin, BindingResult bindingResult,
 			ModelMap model) throws ParseException {
 		//String msg = "Welcome to wellness Login now <a href='http://localhost:8080/wellness/login'>Login </a>";
@@ -75,7 +75,7 @@ public class HitchedController {
 							"Welcome " + userLogin.getFname() + " Login now <a href='login'>Login </a>");
 
 					try {
-						/*sendMail.sendMails(userLogin.getEmailAddress(), "Welcome to wellness ", msg);*/
+						sendMail.sendMails(userLogin.getEmailAddress(), "Welcome to wellness ", msg);
 						model.addAttribute("success",
 								"Confirmation email has been sent to " + userLogin.getEmailAddress() + " thanks");
 
@@ -104,7 +104,7 @@ public class HitchedController {
 
 		return "signups";
 
-	}
+	}*/
 
 	@RequestMapping("/signup")
 	public String signup(@ModelAttribute("signup") UserLogin userLogin, BindingResult bindingResult, ModelMap model)
@@ -113,9 +113,12 @@ public class HitchedController {
 		logger.info("#######################signup : ");
 
 		try {
-/*			if (hitchedService.findUser(userLogin.getEmailAddress()) == false) {
+			logger.info("Id being passed is = " + userLogin.getEmailAddress());
+			if (hitchedService.findUser(userLogin.getEmailAddress()) == false) {
+				logger.info("This is a new user ");
+
 				if (userLogin.getPassword().equals(userLogin.getPasswordConfirm())) {
-*/					hitchedService.createUser(userLogin);
+					hitchedService.createUser(userLogin);
 					model.addAttribute("message",
 							"Welcome " + userLogin.getFname() + " Login now <a href='login'>Login </a>");
 
@@ -130,7 +133,9 @@ public class HitchedController {
 					}
 
 					return "login";
-				/*} else {
+				} else {
+					logger.info("This is an existing user ");
+
 					model.addAttribute("error", "Password not matching ");
 				}
 
@@ -138,7 +143,7 @@ public class HitchedController {
 				model.addAttribute("error", "A user exists with the supplied email " + userLogin.getEmailAddress()
 						+ " <a href='forgotpassword'> Forgot Password click here </a>");
 
-			}*/
+			}
 
 		} catch (RuntimeException e) {
 			model.addAttribute("error", "Unexpected error occured"+ e);
@@ -290,7 +295,7 @@ public class HitchedController {
 	}
 
 
-	@RequestMapping("/saveUser")
+	/*@RequestMapping("/saveUser")
 	public String adminEdit(@ModelAttribute("saveUser") UserLogin userLogin, @RequestParam long loggedin,
 			BindingResult bindingResult, ModelMap model) throws ParseException {
 		try {
@@ -298,9 +303,9 @@ public class HitchedController {
 			model.addAttribute("message", "User " + userLogin.getFname() + " " + userLogin.getLname() + " Updated");
 			model.addAttribute("users", hitchedService.getAllusers());
 
-			/*model.addAttribute("user", hitchedService.getUserByEmail(loggedin).getLname());*/
+			model.addAttribute("user", hitchedService.getUserByEmail(loggedin).getLname());
 			model.addAttribute("id", loggedin);
-			/*model.addAttribute("role", hitchedService.getUserByEmail(loggedin).getRoles());*/
+			model.addAttribute("role", hitchedService.getUserByEmail(loggedin).getRoles());
 			return "admin";
 		} catch (RuntimeException e) {
 			model.addAttribute("error", "Unexpected error occured");
@@ -308,9 +313,9 @@ public class HitchedController {
 
 		}
 		return "dataEdit";
-	}
+	}*/
 
-	@RequestMapping("/admin")
+	/*@RequestMapping("/admin")
 	public String admin(@RequestParam long id, @ModelAttribute UserLogin user, Model model) {
 
 		try {
@@ -332,7 +337,7 @@ public class HitchedController {
 		}
 
 		return "admin";
-	}
+	}*/
 
 	
 	public boolean validateLogin(String uname, String pswd) {
