@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hitch.entity.Applications;
 import com.hitch.entity.UserLogin;
 import com.hitch.repository.HitchedRepository;
 
@@ -14,9 +15,7 @@ public class HitchedService {
 	@Autowired
 	HitchedRepository hitchedRepository;
 	
-	/*@Autowired
-	UserLogin userLogin;*/
-	
+
 	//users
 	public boolean findUser(String email){
 		return this.hitchedRepository.exists(email);
@@ -25,8 +24,6 @@ public class HitchedService {
 	public void createUser(UserLogin userLogin){
 		 hitchedRepository.save(userLogin);
 	}
-	
-	
 
 	public void updateUser(UserLogin userLogin){
 		this.hitchedRepository.save(userLogin);
@@ -49,14 +46,11 @@ public class HitchedService {
     }
 
     
-    
 	
-/*	public UserLogin updateUser(UserLogin userLogin);	
-	public void deleteUserById(long id);
+/*	public void deleteUserById(long id);
     public List<UserLogin> getAllusers();
     public UserLogin getUserByEmailId(String email);
     
-    public UserLogin getUserById(long id);
     public void updateRole(UserLogin userLogin, String role, long id);   
     public void passReset(UserLogin userLogin, String pass, String email);
     public void updateSubscription(UserLogin userLogin, String membership, long id);
@@ -84,4 +78,9 @@ public class HitchedService {
 	public Student findStudent(String email) { 
 		return this.hitchedRepository.findOne(email);
 	}*/
+    
+    
+    
+   
+    
 }

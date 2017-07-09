@@ -15,65 +15,66 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Title</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<!-- <script>
-    window.history.forward();
-    </script> 
-     -->
-</head>
-<body>
-	<header style="background-color: #DAF7A6;">
-		<div class="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed"
-						data-toggle="collapse" data-target=".navbar-collapse.collapse">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</div>
+    <title>Gettin Hitched - Profile Page</title>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
-				<div class="navbar-collapse collapse">
-					<div class="menu">
-						<ul class="nav nav-tabs" role="tablist">
-							<li class="active"><a href="#">Profile</a></li>
-							<li>
-							<li role="presentation" class="pull-right">
-								<form class="navbar-form navbar-right" role="search"
-									action="LookupMembers" method="post">
-									<div class="input-group add-on">
-										<input type="hidden" name="id" value="${attribs.id}" /> <input
-											type="text" class="form-control"
-											placeholder="Find Members by Name" name="LookupMembers"
-											id="LookupMembers" SIZE='20'>
-										<div class="input-group-btn">
-											<button class="btn btn-default" type="submit">
-												<i class="glyphicon glyphicon-search"></i>
-											</button>
-										</div>
-									</div>
-								</form>
-							</li>
-							<c:if
-								test="${fn:containsIgnoreCase(role, 'super') || fn:containsIgnoreCase(role, 'admin')}">
-								<li><a id="adminlink"
-									onclick="document.forms['admin'].submit()">Administrator </a></li>
-							</c:if>
-							<li class="pull-right"><a href="logout" id="logout">${attribs.fname}
-									| Logout</a></li>
-
-
-						</ul>
+    <!-- Bootstrap -->
+    <link href="${contextPath}/resources/company/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="${contextPath}/resources/company/css/font-awesome.min.css">
+	<link rel="stylesheet" href="${contextPath}/resources/company/css/animate.css">
+	<link href="${contextPath}/resources/company/css/prettyPhoto.css" rel="stylesheet">
+	<link href="${contextPath}/resources/company/css/style.css" rel="stylesheet" />		
+    <!-- =======================================================
+        Theme Name: Company
+        Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+  </head>
+  <body>
+	<header>		
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navigation">
+				<div class="container">					
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<div class="navbar-brand">
+							<a href="index.html"><h1><span>Gettin</span> Hitched</h1></a>
+						</div>
 					</div>
+					
+					<div class="navbar-collapse collapse">							
+						<div class="menu">
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation"><a href="/">Home » </a></li>
+								<li role="presentation"><a href="about">About Us » </a></li>
+								<li role="presentation"><a href="services">Services</a></li>								
+								<li role="presentation"><a href="contact">Contact Us » </a></li>						
+								<li role="presentation"><a href="about" class="active">Profile » </a></li>
+								<li class="pull-right"><a href="logout" id="logout">${attribs.fname}
+									| Logout</a></li>
+							</ul>
+						</div>
+					</div>						
 				</div>
-			</div>
-		</div>
+			</div>	
+		</nav>		
 	</header>
+	
+	<div id="breadcrumb">
+		<div class="container">	
+			<div class="breadcrumb">							
+				<li><a href="/">Home</a></li>
+				<li><a href="/login">Login</a></li>
+				<li>Profile</li>			
+			</div>		
+		</div>	
+	</div>
 
 	<div class="container">
 
@@ -104,7 +105,7 @@
 
 
 
-		<div class="row" >
+		<div class="row" style="color: black">
 			<div class="col-md-10">
 				<table class="table table-hover table-bordered">
 					<tr style="background-color: #bce8f1;">
@@ -122,8 +123,10 @@
 					</tr>
 					<tr>
 						<td>Contact Info</td>
-						<td><span style="color: red" class="fa fa-phone fa"></span> <c:out
-								value="${attribs.tel}" /> <span style="color: red"
+						<td>
+						<%-- <span style="color: red" class="fa fa-phone fa"></span> <c:out
+								value="${attribs.tel}" />  --%>
+								<span style="color: red"
 							class="fa fa-envelope fa"></span> <c:out
 								value="${attribs.emailAddress}" /></td>
 					</tr>
@@ -131,140 +134,14 @@
 					<tr>
 						<td>Address</td>
 						<td><span style="color: red" class="glyphicon glyphicon-home"></span>
-							<c:out value="${attribs.address}" /> <c:out
-								value="${attribs.city}" /> <c:out value="${attribs.state}" /> <c:out
-								value="${attribs.zip}" /></td>
+							<c:out value="${attribs.city}" /> 
+							<c:out value="${attribs.state}" /> 
 					</tr>
-					<tr>
-						<td>Web site</td>
-						<td><c:choose>
-								<c:when test="${empty attribs.website}">
-									<p style="color: #E44422">Please update your web site</p>
-								</c:when>
-								<c:otherwise>
-									<span style="color: green" class="glyphicon glyphicon-globe"></span>
-									<a href="${attribs.website}"><c:out
-											value="${attribs.website}" /> </a>
-								</c:otherwise>
-							</c:choose></td>
-					</tr>
-					<tr>
-						<td>Membership Type</td>
-						<td>
-							<form class="col-md-10" action="changeSubscriptionType"
-								method="post">
-								<div class="input-group add-on">
-									<input type="hidden" name="id" value="${attribs.id}" /> <select
-										name="subscription" id="subscription"
-										class="form-control input">
-										<option value="Life Time Membership">Life Time
-											Membership $400</option>
-										<option value="Annual Subscription">Annual
-											Subscription $100</option>
-										<option value="Monthly Subscription">Monthly
-											Subscription $35</option>
-										<option value="" selected>${attribs.subscription}</option>
-									</select>
-									<div class="input-group-btn" class="col-md-2">
-										<button class="btn btn-success" type="submit"
-											title="assign roles">Change</button>
-									</div>
-								</div>
-							</form>
 
-						</td>
-
-						<%-- my code    tr = table row  td = table data--%>
-					</tr>
-					<tr>
-						<td>Club Address</td>
-
-						<td>
-						<c:if test="${empty attribs.selectClub}">
-										<form class="col-md-10" action="addAddress" method="post">
-											<div class="input-group add-on">
-												<input type="hidden" name="id" value="${attribs.id}" /> 
-														<select name="selectClub" class="form-control input">
-														<option value="" selected>Select Club</option>
-														<c:forEach items="${address}" var="item">
-															<option value="${item.bname}">${item.bname}</option>
-														</c:forEach>
-												</select>
-													<div class="input-group-btn" class="col-md-2">
-										<button class="btn btn-success" type="submit"
-											title="assign roles">Select Club</button>
-											</div>
-											</div>
-										</form>
-										<p class="text-danger" >Please update your club</p>
-										</c:if>
-								${attribs.selectClub}
-										</td>
-
-						<%-- <td><c:out value="${attribs.selectClub}" /></td> --%>
-
-						<%-- <td>
-							<form class="col-md-10" action="selectClub"
-								method="post">
-								<div class="input-group add-on">
-									<input type="hidden" name="id" value="${attribs.id}" /> <select
-										name="subscription" id="subscription"
-										class="form-control input">
-										<option value="Swansea">Life Time
-											Membership $400</option>
-										<option value="Belleville">Annual
-											Subscription $100</option>
-										<option value="Swansea">Monthly
-											Subscription $35</option>
-										<option value="" selected>${attribs.bname}</option>
-									</select>
-									<div class="input-group-btn" class="col-md-2">
-										<button class="btn btn-success" type="submit"
-											title="assign roles">Change</button>
-									</div>
-								</div>
-							</form>
-
-						</td> --%>
-
-
-					</tr>
 				</table>
-				<div class="col-md-8">  <!-- "col-md-8">  -->
-
-					<c:choose>
-						<c:when test="${not empty attribs.background}">
-							<h3 class="text-info">${attribs.fname}'s
-								Biography <br>${attribs.background}</h3>
-						</c:when>
-						<c:otherwise>
-							<div class="col-md-6-">
-								<form class="col-md-10" action="writeBio" method="post">
-									<input type="hidden" name="id" value="${attribs.id}" /> 
-									<label class="text-danger" for="background" id='background'>Please Enter a Biography</label>
-									<textarea class="form-control" id="background"
-										name="background" rows="5" placeholder="Write a short Bio"></textarea>
-									<br>
-									<div class="form-group">
-										<button type="submit" name="submit" class="btn btn-primary">Submit
-										</button>
-										<button type="reset" class="btn btn-primary" role="button">Reset</button>
-									</div>
-								</form>
-							</div>
-						</c:otherwise>
-					</c:choose>
-
-				</div>
 				
 				
 			</div>
-	<!--  		<div class="col-md-6">
-				<h3 class="text-info">${attribs.fname}'s
-					Bio <br>${attribs.background}</h3>
-				<%-- <p>Visit my web site <a href="${attribs.website}">http://www.missjillscott.com/</a></p> --%>
-			</div>  -->
-
 
 		</div>
 
@@ -272,15 +149,16 @@
 			onclick="document.forms['userEdits'].submit()">Update Profile </a>
 		<button type="button" class="btn btn-primary" data-toggle="collapse"
 			data-target="#show">Reset Password</button>
-		<form class="col-md-3" action="Lookupcity" method="GET">
+			<br><br>
+		<form class="col-md-3" action="LookupApp" method="GET">
 			<div class="input-group add-on">
 				<input type="text" class="form-control"
-					placeholder="Look-up by City or Zip" name="Lookupcity"
-					id="Lookupcity" SIZE='14'> <input type="hidden" name="id"
+					placeholder="Look-up by Application" name="LookupApp"
+					id="LookupApp" SIZE='14'> <input type="hidden" name="id"
 					value="${attribs.id}">
 				<div class="input-group-btn">
 					<button class="btn btn-default" type="submit">
-						<i class="glyphicon glyphicon-search" title="Enter City or Zip"></i>
+						<i class="glyphicon glyphicon-search" title="Enter Application Name"></i>
 					</button>
 				</div>
 			</div>
@@ -291,29 +169,50 @@
 	<div id="show" class="collapse">
 		<%@include file="getpswd.jsp"%>
 	</div>
-</body>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<footer
-	style="background-color: #ff6600; position: fixed; bottom: 0; width: 100%;">
-	<div class="col-md-5 col-md-offset-5">
-		<div class="menu">
-			<ul class="nav nav-tabs" role="tablist">
-				<li><a href="index">Home</a></li>
-				<li><a href="about">About Us</a></li>
-				<li><a href="contact">Contact Us</a></li>
-				<li><a href="signups">Sign up</a></li>
-				<li><a href="login">login</a></li>
-				<li><a href="services">Look-Ups</a></li>
-
-			</ul>
-
+	<footer>
+		<div class="footer">
+			<div class="container">
+				<div class="social-icon">
+					<div class="col-md-4">
+						<ul class="social-network">
+							<li><a href="#" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
+						</ul>	
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-md-offset-4">
+					<div class="copyright">
+						&copy; Company Theme. All Rights Reserved.
+                        <div class="credits">
+                            <!-- 
+                                All the links in the footer should remain intact. 
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Company
+                            -->
+                            <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+					</div>
+				</div>						
+			</div>
+			<div class="pull-right">
+				<a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
+			</div>
 		</div>
-	</div>
-
-</footer>
-
+	</footer>
+	
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-2.1.1.min.js"></script>	
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>  
+	<script src="js/wow.min.js"></script>
+	<script src="js/functions.js"></script>
+	
+</body>
 </html>

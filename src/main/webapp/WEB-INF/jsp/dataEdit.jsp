@@ -16,42 +16,68 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    
+    <title>Gettin Hitched Update Form Page</title>
+
+    <!-- Bootstrap -->
+    <link href="${contextPath}/resources/company/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="${contextPath}/resources/company/css/font-awesome.min.css">
+	<link rel="stylesheet" href="${contextPath}/resources/company/css/animate.css">
+	<link href="${contextPath}/resources/company/css/prettyPhoto.css" rel="stylesheet">
+	<link href="${contextPath}/resources/company/css/style.css" rel="stylesheet" />	
+
   </head>
   <body>
-	<header style="background-color: #DAF7A6;">		
-		<div class="navigation">
-				<div class="container">				
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navigation">
+				<div class="container">					
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse.collapse">
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-						</button>						
+						</button>
+						<div class="navbar-brand">
+							<a href="index.html"><h1><span>Gettin</span>hitched</h1></a>
+						</div>
 					</div>
 					
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li class="active"><a href="">Update Form</a></li>
+								<li role="presentation"><a href="/">Home » </a></li>
+								<li role="presentation"><a href="about">About Us » </a></li>
+								<li role="presentation"><a href="services.html">Services</a></li>								
+								<li role="presentation"><a href="signups">Sign up » </a></li>
+								<li role="presentation"><a href="login">Login » </a></li>
+								<li role="presentation"><a href="contact" >Contact Us » </a></li>						
+								<li role="presentation" class="active"><a href="">Update Form</a></li>
 								<li class="pull-right"><a href="index">Logout | ${user}</a></li>					
+							</ul>
+						</div>
+					</div>						
 							</ul>
 						</div>
 					</div>						
 				</div>
 			</div>	
-		
+		</nav>		
 	</header>
+	
+	<div id="breadcrumb">
+		<div class="container">	
+			<div class="breadcrumb">							
+				<li><a href="/">Home</a></li>
+				<li>Date Edit</li>			
+			</div>		
+		</div>	
+	</div>
 	
 	<div class="container">
 		<div class="col-lg-8 col-lg-offset-3">
 			<div>
 			
-			    <h1 style="color: #008000">Wellness club Data entry</h1>
+			    <h1 style="color: #008000">Gettin Hitched Data Entry</h1>
 				
 				<h2 class="text-success" >${message} </h2>				
 				<h2 class="text-danger" >${error} </h2>

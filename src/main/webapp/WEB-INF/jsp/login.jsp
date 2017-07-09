@@ -12,16 +12,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <script>
-    window.history.forward();
-    </script>
-       
+    <title>Gettin Hitched - About Us Page</title>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+    <!-- Bootstrap -->
+    <link href="${contextPath}/resources/company/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="${contextPath}/resources/company/css/font-awesome.min.css">
+	<link rel="stylesheet" href="${contextPath}/resources/company/css/animate.css">
+	<link href="${contextPath}/resources/company/css/prettyPhoto.css" rel="stylesheet">
+	<link href="${contextPath}/resources/company/css/style.css" rel="stylesheet" />		
+    <!-- =======================================================
+        Theme Name: Company
+        Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/
+        Author: BootstrapMade
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
   </head>
   <body>
-	<header style="background-color: #DAF7A6;">		
+	<header>		
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="navigation">
 				<div class="container">					
 					<div class="navbar-header">
@@ -30,27 +39,42 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-						</button>						
+						</button>
+						<div class="navbar-brand">
+							<a href="/"><h1><span>Gettin</span> Hitched</h1></a>
+						</div>
 					</div>
 					
 					<div class="navbar-collapse collapse">							
 						<div class="menu">
 							<ul class="nav nav-tabs" role="tablist">
-								<li ><a href="/">Home</a></li>
-								<li><a href="signups">Sign up</a></li>
-								<li><a href="services">Look-Ups</a></li>
-								<li class="active"><a href="login">login</a></li>				
+								<li role="presentation"><a href="/">Home » </a></li>
+								<li role="presentation"><a href="about">About Us » </a></li>
+								<li role="presentation"><a href="services">Services</a></li>								
+								<li role="presentation"><a href="signups">Sign up » </a></li>
+								<li role="presentation"><a href="login" class="active">Login » </a></li>
+								<li role="presentation"><a href="contact">Contact Us » </a></li>						
 							</ul>
 						</div>
 					</div>						
 				</div>
-			</div>				
+			</div>	
+		</nav>		
 	</header>
+	
+	<div id="breadcrumb" >
+		<div class="container">	
+			<div class="breadcrumb">							
+				<li><a href="/">Home</a></li>
+				<li>Login</li>			
+			</div>		
+		</div>	
+	</div>
 	
 	<div class="container">
 		 
 			<div>
-				<h1 style="color: #008000">Welcome to wellness club</h1>
+				<h1 style="color: #008000">Welcome to Gettin Hitched</h1>
 				<h3 style="color: #008000">${msg} </h3>
 				<h2 style="color: #008000">${message}</h2>
 				<h2 style="color: #008000">${success} </h2>
@@ -67,17 +91,17 @@
 					<div class="col-lg-5">
 						<form id="myForm" action="newlogin" method="post" class="bs-example form-horizontal">
 							<fieldset>
-								<legend>New wellness club login </legend><br>								
+								<legend>Gettin Hitched Login </legend><br>								
 								
 								<div class="form-group">
-									<label for="userNameInput" class="col-lg-3 control-label">Email</label>
+									<label for="userNameInput" style="color: #008000" class="col-lg-3 control-label">Email</label>
 									<div class="col-lg-9">
 										<input type="text" class="form-control" name="emailAddress" id="emailAddress" placeholder="User Name" />
 									</div>
 								</div>
 								
 								<div class="form-group">
-									<label for="passwordInput" class="col-lg-3 control-label">Password</label>
+									<label for="passwordInput" style="color: #008000" class="col-lg-3 control-label">Password</label>
 									<div class="col-lg-9">
 										<input type="password" class="form-control" name="password" id="password" placeholder="Password" />
 									</div>
@@ -85,9 +109,9 @@
 								
 
 							<div class="col-lg-9 col-lg-offset-3">									
-									<button class="btn btn-primary">Login</button>
-									<a href="index" class="btn btn-primary" role="button">Cancel</a>
-									<a href="forgotpassword" class="btn btn-primary" role="button">Forgot Password</a>
+									<button class="btn btn-primary" style="background-color: orange">Login</button>
+									<a href="index" class="btn btn-primary" role="button" style="background-color: orange">Cancel</a>
+									<a href="forgotpassword" class="btn btn-primary" role="button" style="background-color: orange">Forgot Password</a>
 								</div>	
 							</fieldset>
 						</form>
@@ -98,20 +122,51 @@
 			</div>
 			
 		</div>		
-	<footer  style="background-color: #ff6600; position: relative; bottom:0;width:100%;" >						
-				<div class="col-md-5 col-md-offset-3">
-				<div class="menu">
-							<ul class="nav nav-tabs" role="tablist">
-								<li ><a href="/">Home</a></li>
-								<li><a href="about">About Us</a></li>																
-								<li><a href="contact">Contact Us</a></li>	
-						        
-							</ul>
-							
-						</div>
-						</div>
-		
+	<footer>
+		<div class="footer">
+			<div class="container">
+				<div class="social-icon">
+					<div class="col-md-4">
+						<ul class="social-network">
+							<li><a href="#" class="fb tool-tip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#" class="twitter tool-tip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="gplus tool-tip" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+							<li><a href="#" class="linkedin tool-tip" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+							<li><a href="#" class="ytube tool-tip" title="You Tube"><i class="fa fa-youtube-play"></i></a></li>
+						</ul>	
+					</div>
+				</div>
+				
+				<div class="col-md-4 col-md-offset-4">
+					<div class="copyright">
+						&copy; Company Theme. All Rights Reserved.
+                        <div class="credits">
+                            <!-- 
+                                All the links in the footer should remain intact. 
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Company
+                            -->
+                            <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                        </div>
+					</div>
+				</div>						
+			</div>
+			<div class="pull-right">
+				<a href="#home" class="scrollup"><i class="fa fa-angle-up fa-3x"></i></a>
+			</div>
+		</div>
 	</footer>
+	
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-2.1.1.min.js"></script>	
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>  
+	<script src="js/wow.min.js"></script>
+	<script src="js/functions.js"></script>
+	
   </body>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

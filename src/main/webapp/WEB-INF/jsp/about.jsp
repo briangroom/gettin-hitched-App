@@ -47,7 +47,7 @@
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="/">Home » </a></li>
 								<li role="presentation"><a href="about" class="active">About Us » </a></li>
-								<li role="presentation"><a href="services.html">Services</a></li>								
+								<li role="presentation"><a href="services">Services</a></li>								
 								<li role="presentation"><a href="signups">Sign up » </a></li>
 								<li role="presentation"><a href="login">Login » </a></li>
 								<li role="presentation"><a href="contact">Contact Us » </a></li>						
@@ -73,7 +73,7 @@
 			<h3>Our company information</h3>
 			<hr>
 			<div class="col-md-7 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-				<img src="images/7.jpg" class="img-responsive">
+				<img src="${contextPath}/resources/company/images/7.jpg" class="img-responsive">
 				<h4>We Evaluate, Break Down, Rate and Review</h4>
 				<p>The Gettin' Hitched App is here to help couples find the wedding planning appliction 
 				that will best fit their needs. Our staff will evaluate wedding planning applications, 
@@ -138,19 +138,19 @@
 			<h3>Our Team</h3>	
 			<div class="text-center">
 				<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-					<img src="images/services/1.jpg" alt="" >
-					<h4>John Doe</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
+					<img src="${contextPath}/resources/company/images/image1.jpg" alt="" >
+					<h4>Brian Groom</h4>
+					<p>Full Stack Java Developer</p>
 				</div>
 				<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-					<img src="images/services/2.jpg" alt="" >
-					<h4>John Doe</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
+					<img src="${contextPath}/resources/company/images/image1.jpg" alt="" >
+					<h4>Brian Groom</h4>
+					<p>Full Stack Java Developer</p>
 				</div>
 				<div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
-					<img src="images/services/3.jpg" alt="" >
-					<h4>John Doe</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
+					<img src="${contextPath}/resources/company/images/image1.jpg" alt="" >
+					<h4>Brian Groom</h4>
+					<p>Full Stack Java Developer</p>
 				</div>
 			</div>
 		</div>

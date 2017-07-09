@@ -56,12 +56,28 @@
 				<div class="col-lg-6">
 					<h1>Gettin Hitched Landing Page</h1>
 					<h2 class="subtitle">Feel free to browse our wedding app ratings and reviews.</h2>
-					<form class="form-inline signup" role="form">
+			        <%-- <form class="navbar-form navbar-right" role="search"  action="Lookupcity" method="post">
+						    <div class="input-group add-on">										      
+						      <input type="text" class="form-control" placeholder="Search City or Zip" name="Lookupcity" id="Lookupcity" SIZE='15'>
+						      <input type="hidden" name="id" value="-1">
+						      <div class="input-group-btn">
+						        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" title="Lookup members by City or Zip"></i></button>
+						      </div>
+						    </div>
+					 </form> --%>
+					<form class="form-inline applications" role="search" action="Applications" method="post">
+					  <div class="form-group">
+					    <input type="text" class="form-control" id="exampleInputApp" name="LookupApp" 
+					    	id="LookupApp" SIZE='15' placeholder="Enter an app name">
+					  </div>
+					  <button type="submit" class="btn btn-theme" >browse reviews</button>
+					</form>					
+					<%-- <form class="form-inline signup" role="form">
 					  <div class="form-group">
 					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter an app name">
 					  </div>
-					  <button type="submit" class="btn btn-theme">browse reviews</button>
-					</form>					
+					  <button type="submit" class="btn btn-theme" >browse reviews</button>
+					</form>	 --%>				
 				</div>
 				<div class="col-lg-4 col-lg-offset-2">
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -120,18 +136,10 @@
 	<div id="footer">
 	<div class="container">
 		<div class="row">
-			<!-- <div class="col-md-6">
-	            <p class="copyright">&copy; Siimple Theme</p>
-			</div> --> 
             <div class="col-md-6">
                 <div class="credits">
-                    <!-- 
-                        All the links in the footer should re intact. 
-                        You can delete the links only if you purchased the pro version.
-                        Licensing information: https://bootstrapmade.com/license/
-                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Siimple
-                    -->
-                    <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by 
+                    <a href="https://bootstrapmade.com/">BootstrapMade</a>
                 </div>
             </div>
 		</div>		

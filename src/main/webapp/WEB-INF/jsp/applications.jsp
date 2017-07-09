@@ -42,7 +42,7 @@
 	<li><a href="contact">Contact Us</a></li> 
 	<li><a href="signups">Sign up</a></li>
 	<li><a href="services">Look-Ups</a></li>
-	<li class="active"><a href="Addresses">Addresses</a></li> 
+	<li class="active"><a href="applications">Applications</a></li> 
 	</ul>
 	</div>
 	</div> 
@@ -53,7 +53,7 @@
 	<div class="container">
 
 	<div>
-	<h1 style="color: #008000">Welcome to wellness club</h1>
+	<h1 style="color: #008000">Welcome to Gettin Hitched Rating App</h1>
 	<h3 style="color: #008000">${msg} </h3>
 	<h2 style="color: #008000">${message}</h2>
 	<h2 style="color: #008000">${success} 
@@ -61,7 +61,7 @@
 	</h2>
 	<c:if test="${not empty error}">
 	<h2 style="color: #FF0000">${error} 
-	<a href="addresses">Retry</a>
+	<a href="applications">Retry</a>
 	</h2>
 	</c:if>
 	</div>
@@ -70,17 +70,155 @@
    
    <div>
    <c:if test="${empty error}">
-   <form:form method="POST" modelAttribute="addresses" class="col-md-12 col-md-offset-1">        
+   <form:form method="POST" modelAttribute="applications" class="col-md-12 col-md-offset-1">        
         
+		<div class="row" >
+			<div class="col-md-10">
+				<table class="table table-hover table-bordered">
+					<tr style="background-color: #bce8f1;">
+						<td>Artist</td>
+						<td><span class="fa fa-calendar"
+							style="font-size: 18px; color: green; padding-top: 2px;">
+								Details <%= df.format(new java.util.Date()) %>
+						</span></td>
+					</tr>
+					<tr>
+						<td>Application Name</td>
+						<td><span style="color: red" class="glyphicon glyphicon-user"></span>
+							<c:out value="${attribs.appName}" /> </td>
+						<td>Web site</td>
+						<td><c:choose>
+								<c:when test="${empty attribs.website}">
+									<p style="color: #E44422">Please enter your web site (url)</p>
+								</c:when>
+								<c:otherwise>
+									<span style="color: green" class="glyphicon glyphicon-globe"></span>
+									<a href="${attribs.website}">
+									<c:out value="${attribs.website}" /> </a>
+								</c:otherwise>
+							</c:choose></td>
+						<td>Date Tracker</td>
+						<td><c:out value="${attribs.dateTracker}" /></td>
+					</tr>
+
+					<%-- <tr>
+						<td>Address</td>
+						<td><span style="color: red" class="glyphicon glyphicon-home"></span>
+							<c:out value="${attribs.address}" /> <c:out
+								value="${attribs.city}" /> <c:out value="${attribs.state}" /> <c:out
+								value="${attribs.zip}" /></td>
+					</tr>
+					<tr>
+						<td>Web site</td>
+						<td><c:choose>
+								<c:when test="${empty attribs.website}">
+									<p style="color: #E44422">Please update your web site</p>
+								</c:when>
+								<c:otherwise>
+									<span style="color: green" class="glyphicon glyphicon-globe"></span>
+									<a href="${attribs.website}"><c:out
+											value="${attribs.website}" /> </a>
+								</c:otherwise>
+							</c:choose></td>
+					</tr>
+					<tr>
+						<td>Membership Type</td>
+						<td>
+							<form class="col-md-10" action="changeSubscriptionType"
+								method="post">
+								<div class="input-group add-on">
+									<input type="hidden" name="id" value="${attribs.id}" /> <select
+										name="subscription" id="subscription"
+										class="form-control input">
+										<option value="Life Time Membership">Life Time
+											Membership $400</option>
+										<option value="Annual Subscription">Annual
+											Subscription $100</option>
+										<option value="Monthly Subscription">Monthly
+											Subscription $35</option>
+										<option value="" selected>${attribs.subscription}</option>
+									</select>
+									<div class="input-group-btn" class="col-md-2">
+										<button class="btn btn-success" type="submit"
+											title="assign roles">Change</button>
+									</div>
+								</div>
+							</form>
+
+						</td>
+
+						my code    tr = table row  td = table data
+					</tr>
+					<tr>
+						<td>Club Address</td>
+
+						<td>
+						<c:if test="${empty attribs.selectClub}">
+										<form class="col-md-10" action="addAddress" method="post">
+											<div class="input-group add-on">
+												<input type="hidden" name="id" value="${attribs.id}" /> 
+														<select name="selectClub" class="form-control input">
+														<option value="" selected>Select Club</option>
+														<c:forEach items="${address}" var="item">
+															<option value="${item.bname}">${item.bname}</option>
+														</c:forEach>
+												</select>
+													<div class="input-group-btn" class="col-md-2">
+										<button class="btn btn-success" type="submit"
+											title="assign roles">Select Club</button>
+											</div>
+											</div>
+										</form>
+										<p class="text-danger" >Please update your club</p>
+										</c:if>
+								${attribs.selectClub}
+										</td>
+
+						<td><c:out value="${attribs.selectClub}" /></td>
+
+						<td>
+							<form class="col-md-10" action="selectClub"
+								method="post">
+								<div class="input-group add-on">
+									<input type="hidden" name="id" value="${attribs.id}" /> <select
+										name="subscription" id="subscription"
+										class="form-control input">
+										<option value="Swansea">Life Time
+											Membership $400</option>
+										<option value="Belleville">Annual
+											Subscription $100</option>
+										<option value="Swansea">Monthly
+											Subscription $35</option>
+										<option value="" selected>${attribs.bname}</option>
+									</select>
+									<div class="input-group-btn" class="col-md-2">
+										<button class="btn btn-success" type="submit"
+											title="assign roles">Change</button>
+									</div>
+								</div>
+							</form>
+
+						</td>
+
+
+					</tr>  --%>
+				</table>
+			</div>
+		</div>
+
+
+
+
+
         <div class="row">
         
         <div class="col-md-2">
         <spring:bind path="tel">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-            <label for="bname" id='bname' >Club Name *</label>
-                <form:input type="text" path="bname" class="form-control" placeholder="Club Name"
+            <label for="appName" id='appName' >Application Name *</label>
+                <form:input type="text" path="appName" class="form-control" placeholder="Application Name"
                             autofocus="true"></form:input>
-                <form:errors class="text-danger" path="bname"></form:errors>
+                <form:errors class="text-danger" path="appName"></form:errors>
             </div>
         </spring:bind>
         </div>
@@ -88,12 +226,12 @@
         
         
         <div class="col-md-3">
-        <spring:bind path="address">
+        <spring:bind path="website">
             <div class="form-group ${status.error ? 'has-error' : ''}">
-            <label for="address" id='address' > Address*</label>
-                <form:input type="text" path="address" class="form-control" placeholder="Address"
+            <label for="website" id='website' > Website*</label>
+                <form:input type="text" path="website" class="form-control" placeholder="Website"
                             autofocus="true"></form:input>
-                <form:errors class="text-danger" path="address"></form:errors>
+                <form:errors class="text-danger" path="website"></form:errors>
             </div>
         </spring:bind>
         </div>

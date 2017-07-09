@@ -23,11 +23,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.hitch.entity.UserLogin;
-import com.hitch.hitchUtils.HitchUtils;
 import com.hitch.hitchUtils.States;
 import com.hitch.hitchUtils.States.Days;
 import com.hitch.repository.HitchedRepository;
 import com.hitch.service.HitchedService;
+//import com.hitch.service.MailService;
 
 @Controller
 @SessionAttributes("emailAddress")
@@ -38,6 +38,18 @@ public class HitchedController {
 	@Autowired
 	private HitchedService hitchedService;
 	 
+	/*@Autowired
+	private MailService mailServices;*/
+
+
+	
+	/*@RequestMapping(value = "/services", method = RequestMethod.GET)
+	public String service(Model model) {
+		model.addAttribute("message", "Welcome to wellness club ");
+
+		return "services";
+	}*/
+
 
 	@RequestMapping("/")
 	public String welcome(Model model) {
@@ -47,8 +59,6 @@ public class HitchedController {
 	}
 
     /*SendMail sendMail =new SendMail();*/
-    HitchUtils hitchUtils=new HitchUtils();
-    
 
 	@RequestMapping(value = "/signups", method = RequestMethod.GET)
 	public String signups(Model model) {
@@ -295,6 +305,24 @@ public class HitchedController {
 	}
 
 
+	public boolean validateLogin(String uname, String pswd) {
+		UserLogin dbCredentials = hitchedService.getUserByEmailId(uname);
+		if (!(uname.equals(dbCredentials.getEmailAddress()) && pswd.equals(dbCredentials.getPassword()))) {
+			return false;
+		} else
+			return true;
+	}
+
+	
+	/*@RequestMapping(value = "/testpost", method = RequestMethod.POST)
+	public String test(@ModelAttribute("testpost") UserLogin user, ModelMap model) throws ParseException {
+
+		model.addAttribute("msg2", "Post Success! You entered email: " +user.getEmailAddress()+ " and first name is " + user.getFname());
+		model.addAttribute("addresses", locationService.getAllAddresses());
+
+		return "testpage";
+	}*/	
+
 	/*@RequestMapping("/saveUser")
 	public String adminEdit(@ModelAttribute("saveUser") UserLogin userLogin, @RequestParam long loggedin,
 			BindingResult bindingResult, ModelMap model) throws ParseException {
@@ -339,15 +367,6 @@ public class HitchedController {
 		return "admin";
 	}*/
 
-	
-	public boolean validateLogin(String uname, String pswd) {
-		UserLogin dbCredentials = hitchedService.getUserByEmailId(uname);
-		if (!(uname.equals(dbCredentials.getEmailAddress()) && pswd.equals(dbCredentials.getPassword()))) {
-			return false;
-		} else
-			return true;
-	}
-	
 	
     /*@RequestMapping(value="/signups", method= RequestMethod.POST)
     private String submitUserLogin(Model model, @ModelAttribute("userLogin") UserLogin userLogin){
