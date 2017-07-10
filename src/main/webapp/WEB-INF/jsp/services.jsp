@@ -78,13 +78,75 @@
 			<h3>Company Services</h3>
 			<hr>
 			<div class="col-md-6">
-				<img src="images/4.jpg" class="img-responsive">
+				<img src="resources/company/images/4.jpg" class="resources/company/img-responsive">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
 				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
 				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
 				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque</p>
 			</div>
 			
+
+	<div class="container">	
+                                  
+                                  <div class="text-center">
+                                  <h3 class="text-success" style="color: #008000"> 
+		                              
+                                   ${message} 
+                                   
+                                   ${fn} 
+                                   ${ln} 
+                                   ${em}  
+                                   
+                                   </h3>  
+                                   <h3 class="text-danger" >    
+                                   ${error}                                   
+                                   </h3>  
+                                   </div>
+                                  
+                                   
+  <div class="container">	                                 
+    <form class="col-md-4" id="email-lookup" method="post"  action="email-lookup">                    
+      <div class="contact-form">
+              <div class="container">                                
+                    
+                     <div class="col-md-3">
+                           <div class="form-group">
+                                <label for="emailAddressInput" >Email Look-Up*</label>									
+									    <input type="hidden" name="roles" value="user"/>
+										<input type="text" class="form-control" name="emailAddress" id="emailAddressInput" value="${attribs.emailAddress}" placeholder="Email Address" required/>
+							    </div>                           
+                     </div>
+                     
+                     <div class="col-md-12" >
+		                             <div class="form-group">		                           
+					                   <button type="submit" name="submit" id="submit" class="btn btn-primary" >Submit</button> 		                              
+		                             </div>
+                                  </div>
+                </div>
+       </div>         
+           
+        </form>
+        
+    <form class="col-md-4" id="LookUpByLastnameOrFirstname" method="post"  action="LookUpByLastnameOrFirstname">                    
+      <div class="contact-form">
+              <div class="container">                                  
+                     <div class="col-md-3" >
+                           <div class="form-group">
+                              <label for="ln" id='eln' >Name Look-up*</label>
+                               <input type=text id="lname" name="lname" value="${attribs.lname}" class="form-control input-sm" placeholder="Enter Last or First Name" required> 
+                           </div>                           
+                     </div>                       
+                          <div class="col-md-12" >
+		                             <div class="form-group">		                           
+					                   <button type="submit" name="submit" id="submit" class="btn btn-primary" >Submit</button> 
+		                               
+		                             </div>
+                                  </div> 
+              </div>
+          </div>
+       </form>
+
+
 			<div class="col-md-6">
 				<div class="media">
 					<ul>
@@ -164,7 +226,7 @@
 			</div>
 						
 			<div class="col-md-6">
-				<img src="images/4.jpg" class="img-responsive">
+				<img src="resources/company/images/4.jpg" class="resources/company/img-responsive">
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum erat 
 				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque
 				libero, pulvinar tincidunt leo consectetur eget. Curabitur lacinia pellentesque

@@ -16,7 +16,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gettin Hitched - Sign up Page</title>
+    <title>Gettin Hitched - Application Entry Page</title>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
     <!-- Bootstrap -->
@@ -32,7 +32,7 @@
         Author URL: https://bootstrapmade.com
     ======================================================= -->
   </head>
-  <body style="background: url(${contextPath}/resources/assets/img/main-bg.jpg) no-repeat center top">
+  <body>
 	<header>
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="navigation">
@@ -55,8 +55,7 @@
 								<li role="presentation"><a href="/">Home » </a></li>
 								<li role="presentation"><a href="about">About Us » </a></li>
 								<li role="presentation"><a href="services">Services</a></li>								
-								<li role="presentation"><a href="signups" class="active">Sign up » </a></li>
-								<li role="presentation"><a href="login">Login » </a></li>
+								<li role="presentation"><a href="appentry" class="active">App Entry » </a></li>
 								<li role="presentation"><a href="contact">Contact Us » </a></li>						
 							</ul>
 						</div>
@@ -70,7 +69,7 @@
 		<div class="container">	
 			<div class="breadcrumb">							
 				<li><a href="/">Home</a></li>
-				<li>Sign up</li>			
+				<li>Application Entry</li>			
 			</div>		
 		</div>	
 	</div>
@@ -80,19 +79,18 @@
 		<div class="col-lg-8 col-lg-offset-3">
 			<div>
 			
-			<!-- <h1 style="color: #008000">Gettin' Hitched Registration</h1> -->
-			<h1 style="color: #fd680e">Gettin' Hitched Registration</h1>
+			<!-- <h1 style="color: #008000">Gettin' Hitched Application Entry</h1> -->
+			<h1 style="color: #fd680e">Gettin' Hitched Application Entry</h1>
 			    <c:if test="${empty error}">
 			    
 				<c:if test="${empty message}">
 				
-				<!-- <h2 style="color: #008000">Try a two week Free trial now!</h2> -->
 				</c:if>
 				<h2>				
 				<c:if test="${not empty message}">
-				<h1 style="color: #fd680e">Gettin' Hitched Registration Success</h1>
+				<h1 style="color: #fd680e">Gettin' Hitched App Entry Success</h1>
 				<div class="text-success">
-				<h2 style="color: #fd680e">${message} <a href="login">Login</a></h2>
+				<h2 style="color: #fd680e">${message} <a href="appentry">App Entry</a></h2>
 				</div>						
 				</c:if>				
 				</h2>	
@@ -106,69 +104,108 @@
 		</div>
 	</div>
 	
-<%-- <form id="signupForm" method="post"  action="signupMember">      --%>               
- 	<form id="signup" method="post"  action="signup">                    
+ 	<form id="appentry" method="post"  action="appentry">                    
       <div class="contact-form">
               <div class="container">
                                   
                       <div class="col-md-5">
                            <div class="form-group">
-                              <label for="fn" id='efn' >First Name*</label>
-                              <input type=text id="fname" name="fname" class="form-control input-sm" placeholder="First Name" > 
+                              <label for="an" id='ean' >Application Name*</label>
+                              <input type=text id="appName" name="appName" class="form-control input-sm" placeholder="Application Name" > 
                            </div>
                      </div>
                      
                      <div class="col-md-5" >
                            <div class="form-group">
-                              <label for="ln" id='eln' >Last Name*</label>
-                              <input type=text id="lname" name="lname" class="form-control input-sm" placeholder="Last Name" > 
+                              <label for="ws" id='ews' >Website (URL)*</label>
+                              <input type=text id="website" name="website" class="form-control input-sm" placeholder="Website (URL)" > 
                            </div>
                       </div>
                       
                       <div class="col-md-3">
                            <div class="form-group">
-                              <label for="tl" id='etl'> City</label>
-                              <input type=text id="city" name="city" class="form-control input-sm" placeholder="City" > 
+                              <label for="dt" id='edt'>Date Tracker</label>
+                              <input type=text id="dateTracker" name="dateTracker" class="form-control input-sm" placeholder="Enter 1-5" > 
                            </div>
-                           <div id='etl'>
-                            </div>
                      </div>
-                              
-                    <div class="col-md-2">
-					<label for="state">State</label>
-					<div class="form-group">
-						<select id="state" name="state" class="form-control input-sm"> 
-							<c:forEach items="${states}" var="state">
-							 <option value="${state}">${state.id}</option>
-							 </c:forEach>
-						</select>							
-					</div>
-				    </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="cl" id='ecl'>Checklist</label>
+                              <input type=text id="checklist" name="checklist" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="vs" id='evs'>Venue Search</label>
+                              <input type=text id="venueSearch" name="venueSearch" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="vr" id='vrt'>Vendor Search</label>
+                              <input type=text id="vendorSearch" name="vendorSearch" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="bt" id='btt'>Budget</label>
+                              <input type=text id="budget" name="budget" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="gl" id='glt'>Guest List</label>
+                              <input type=text id="guestList" name="guestList" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="hb" id='hbt'>Book Hotel Block</label>
+                              <input type=text id="bookHotelBlock" name="bookHotelBlock" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="ds" id='dst'>Dress Search</label>
+                              <input type=text id="dressSearch" name="dressSearch" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="gr" id='grt'>Gift Registry</label>
+                              <input type=text id="giftRegistry" name="giftRegistry" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="vc" id='vct'>Vendor Checklist</label>
+                              <input type=text id="vendorChecklist" name="vendorChecklist" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="fn" id='fnt'>Forumn</label>
+                              <input type=text id="forumn" name="forumn" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
+
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="ww" id='wwt'>Wedding Website</label>
+                              <input type=text id="weddingWebsite" name="weddingWebsite" class="form-control input-sm" placeholder="Enter 1-5" > 
+                           </div>
+                     </div>
 				    
-                     <div class="col-md-5">
-                           <div class="form-group">
-                                <label for="emailAddressInput" >Email*</label>									
-									    <input type="hidden" name="roles" value="user"/>
-										<input type="text" class="form-control" name="emailAddress" id="emailAddressInput" placeholder="Email Address" />
-							    </div>                           
-                     </div>
-                     
-                     <div class="col-md-4">
-                           <div class="form-group">
-                              <label for="ag" id='eag' >Password*</label>                               
-                              <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
-                           </div>                           
-                     </div>
-                     
-                     <div class="col-md-4">
-                           <div class="form-group">
-                              <label for="ps" id='ps' >Reenter password*</label>                               
-                              <input type="password" class="form-control" name="passwordConfirm" id="passwordConfirm" placeholder="Re-enter password" />
-                           </div>                           
-                     </div>
-                     
-                     
-                     
                      <div class="col-md-12" >
 		                           <div class="form-group">
 		                           
@@ -181,6 +218,19 @@
        </div>         
            
         </form>
+
+                    <%-- code for reviews list --%>         
+                    <%-- <div class="col-md-2">
+					<label for=reviews>Reviews</label>
+					<div class="form-group">
+						<select id="reviews" name="reviews" class="form-control input-sm"> 
+							<c:forEach items="${reviews}" var="reviews">
+							 <option value="${reviews}">${reviews.id}</option>
+							 </c:forEach>
+						</select>							
+					</div>
+				    </div> --%>
+
    
 	<footer>
 		<div class="footer">

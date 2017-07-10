@@ -53,8 +53,8 @@
 	<div id="header">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
-					<h1>Gettin Hitched Landing Page</h1>
+				<div class="col-lg-4">
+					<h1>Gettin Hitched App Rater</h1>
 					<h2 class="subtitle">Feel free to browse our wedding app ratings and reviews.</h2>
 			        <%-- <form class="navbar-form navbar-right" role="search"  action="Lookupcity" method="post">
 						    <div class="input-group add-on">										      
@@ -65,7 +65,7 @@
 						      </div>
 						    </div>
 					 </form> --%>
-					<form class="form-inline applications" role="search" action="Applications" method="post">
+					<form class="form-inline applications" role="search" action="applications" method="post">
 					  <div class="form-group">
 					    <input type="text" class="form-control" id="exampleInputApp" name="LookupApp" 
 					    	id="LookupApp" SIZE='15' placeholder="Enter an app name">
@@ -79,7 +79,7 @@
 					  <button type="submit" class="btn btn-theme" >browse reviews</button>
 					</form>	 --%>				
 				</div>
-				<div class="col-lg-4 col-lg-offset-2">
+				<div class="col-lg-6 col-lg-offset-2">
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					  <ol class="carousel-indicators">
 						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>

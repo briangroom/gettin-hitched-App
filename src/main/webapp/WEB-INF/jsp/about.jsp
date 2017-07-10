@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="${contextPath}/resources/company/css/animate.css">
 	<link href="${contextPath}/resources/company/css/prettyPhoto.css" rel="stylesheet">
 	<link href="${contextPath}/resources/company/css/style.css" rel="stylesheet" />		
+	<link href="${contextPath}/resources/company/css/style.css" rel="stylesheet" />		
     <!-- =======================================================
         Theme Name: Company
         Theme URL: https://bootstrapmade.com/company-free-html-bootstrap-template/

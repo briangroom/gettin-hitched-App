@@ -45,6 +45,19 @@ public class HitchedService {
 		 this.hitchedRepository.save(userLogin);
     }
 
+    public List<UserLogin> lookupMembers(String name){
+		return this.hitchedRepository.findAll();
+		}
+
+	public boolean findApp(String appName) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+    /*public List<UserLogin> getUserByName(String user){
+		return this.hitchedRepository.findAll(user);
+	}*/
+
     
 	
 /*	public void deleteUserById(long id);

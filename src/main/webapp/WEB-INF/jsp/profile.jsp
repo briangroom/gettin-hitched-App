@@ -31,8 +31,8 @@
         Author URL: https://bootstrapmade.com
     ======================================================= -->
   </head>
-  <body>
-	<header>		
+  <body style="background: url(${contextPath}/resources/assets/img/main-bg.jpg) no-repeat center top">
+	<header> 		
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="navigation">
 				<div class="container">					
@@ -53,7 +53,7 @@
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="/">Home » </a></li>
 								<li role="presentation"><a href="about">About Us » </a></li>
-								<li role="presentation"><a href="services">Services</a></li>								
+								<li role="presentation"><a href="services.html">Services » </a></li>								
 								<li role="presentation"><a href="contact">Contact Us » </a></li>						
 								<li role="presentation"><a href="about" class="active">Profile » </a></li>
 								<li class="pull-right"><a href="logout" id="logout">${attribs.fname}

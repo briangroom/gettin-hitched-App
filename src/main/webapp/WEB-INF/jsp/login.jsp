@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gettin Hitched - About Us Page</title>
+    <title>Gettin Hitched - Login Page</title>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
     <!-- Bootstrap -->
@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="${contextPath}/resources/company/css/font-awesome.min.css">
 	<link rel="stylesheet" href="${contextPath}/resources/company/css/animate.css">
 	<link href="${contextPath}/resources/company/css/prettyPhoto.css" rel="stylesheet">
+	<link href="${contextPath}/resources/company/css/style.css" rel="stylesheet" />		
 	<link href="${contextPath}/resources/company/css/style.css" rel="stylesheet" />		
     <!-- =======================================================
         Theme Name: Company
@@ -41,7 +42,7 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="navbar-brand">
-							<a href="/"><h1><span>Gettin</span> Hitched</h1></a>
+							<a href="index.html"><h1><span>Gettin</span> Hitched</h1></a>
 						</div>
 					</div>
 					
@@ -50,7 +51,7 @@
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="/">Home » </a></li>
 								<li role="presentation"><a href="about">About Us » </a></li>
-								<li role="presentation"><a href="services">Services</a></li>								
+								<li role="presentation"><a href="lookups">Lookups</a></li>								
 								<li role="presentation"><a href="signups">Sign up » </a></li>
 								<li role="presentation"><a href="login" class="active">Login » </a></li>
 								<li role="presentation"><a href="contact">Contact Us » </a></li>						
@@ -62,7 +63,7 @@
 		</nav>		
 	</header>
 	
-	<div id="breadcrumb" >
+	<div id="breadcrumb">
 		<div class="container">	
 			<div class="breadcrumb">							
 				<li><a href="/">Home</a></li>
@@ -168,7 +169,5 @@
 	<script src="js/functions.js"></script>
 	
   </body>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	
 </html>

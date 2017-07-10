@@ -42,14 +42,6 @@ public class HitchedController {
 	private MailService mailServices;*/
 
 
-	
-	/*@RequestMapping(value = "/services", method = RequestMethod.GET)
-	public String service(Model model) {
-		model.addAttribute("message", "Welcome to wellness club ");
-
-		return "services";
-	}*/
-
 
 	@RequestMapping("/")
 	public String welcome(Model model) {
@@ -166,7 +158,74 @@ public class HitchedController {
 
 	}
 
-
+    @RequestMapping("LookUpByLastnameOrFirstname")
+    public String lookUpname(@ModelAttribute("LookUpByLastnameOrFirstname") UserLogin userLogin, ModelMap model){    	
+    	
+	     //List<UserLogin> userdetail= hitchedService.lookupMembers(userLogin.getLname());	
+    	     try {
+    	    	     /*model.addAttribute("users", lookupMembers(userLogin.getLname()));*/
+		    		  		 
+			     }
+				 catch(EmptyResultDataAccessException e){
+					 model.addAttribute("error", "User "+userLogin.getLname()+" does not exist in the Data base"); 
+    	    	     /*model.addAttribute("attribs", lookupMembers(userLogin.getLname()));*/
+		    		 
+					 }catch(RuntimeException e) {						
+						model.addAttribute("error", "Unexpected error occured"+e);
+						e.printStackTrace();
+					    
+				  }
+    	 
+    	 
+         return "services";
+    	
+    }
+    
+    @RequestMapping("LookupMembers")
+    public String searchMembers(ModelMap model, @RequestParam("LookupMembers") String names, @RequestParam(value="id",required=false) long id){    	
+    	
+    	try {
+    		long membersId=id;
+    		List<UserLogin> memberList = hitchedService.lookupMembers(names);
+    		/*if(hitchedService.getUserByName(names).isEmpty()){          
+                model.addAttribute("error",  "There are no matches for this Look-up");
+               }
+    		else		    				
+    			model.addAttribute("success", memberList.size()+ " members found with name " +names);
+    		    model.addAttribute("users", memberList);		    		    
+    		    model.addAttribute("user", hitchedService.getUserById(membersId));*/
+    		    
+		    }
+			catch(RuntimeException e) {
+				model.addAttribute("error", "Unexpected error occured");
+			    e.printStackTrace();					    
+		  }
+    		
+    	return "members";
+    }
+    
+    /*@RequestMapping("lookupArtist")
+    public String lookartist(ModelMap model, @RequestParam("lookupArtist") String names){    	
+    	
+    	try {
+    		
+    		List<UserLogin> memberList = hitchedService.getUserByName(names);
+    		if(hitchedService.getUserByName(names).isEmpty()){          
+                model.addAttribute("error",  "There are no matches for this Look-up");
+               }
+    		else		    				
+    			model.addAttribute("success", memberList.size()+ " members found with name " +names);
+    		    model.addAttribute("users", memberList);		    		    
+    		     
+		    }
+			catch(RuntimeException e) {
+				model.addAttribute("error", "Unexpected error occured");
+			    e.printStackTrace();					    
+		  }
+    		
+    	return "services";
+    }*/
+    
 
 	@RequestMapping("/about")
     public String about(Model model) {
