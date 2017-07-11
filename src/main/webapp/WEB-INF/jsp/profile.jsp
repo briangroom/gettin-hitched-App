@@ -31,7 +31,7 @@
         Author URL: https://bootstrapmade.com
     ======================================================= -->
   </head>
-  <body style="background: url(${contextPath}/resources/assets/img/main-bg.jpg) no-repeat center top">
+  <body>
 	<header> 		
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="navigation">
@@ -53,7 +53,7 @@
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation"><a href="/">Home » </a></li>
 								<li role="presentation"><a href="about">About Us » </a></li>
-								<li role="presentation"><a href="services.html">Services » </a></li>								
+								<li role="presentation"><a href="applications">Applications » </a></li>								
 								<li role="presentation"><a href="contact">Contact Us » </a></li>						
 								<li role="presentation"><a href="about" class="active">Profile » </a></li>
 								<li class="pull-right"><a href="logout" id="logout">${attribs.fname}
@@ -109,10 +109,10 @@
 			<div class="col-md-10">
 				<table class="table table-hover table-bordered">
 					<tr style="background-color: #bce8f1;">
-						<td>Artist</td>
+						<td>Date</td>
 						<td><span class="fa fa-calendar"
 							style="font-size: 18px; color: green; padding-top: 2px;">
-								Details <%= df.format(new java.util.Date()) %>
+								Today <%= df.format(new java.util.Date()) %>
 						</span></td>
 					</tr>
 					<tr>

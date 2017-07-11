@@ -75,10 +75,10 @@
 	<div class="container">
 		 
 			<div>
-				<h1 style="color: #008000">Welcome to Gettin Hitched</h1>
-				<h3 style="color: #008000">${msg} </h3>
-				<h2 style="color: #008000">${message}</h2>
-				<h2 style="color: #008000">${success} </h2>
+				<!-- <h1 style="color: #fd680e">Welcome to Gettin Hitched</h1> -->
+				<h3 style="color: #fd680e">${msg} </h3>
+				<h2 style="color: #fd680e">${message}</h2>
+				<h2 style="color: #fd680e">${success} </h2>
 				<h2 style="color: #FF0000">${error} </h2>
 				
 			</div>

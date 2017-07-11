@@ -32,7 +32,7 @@
         Author URL: https://bootstrapmade.com
     ======================================================= -->
   </head>
-  <body style="background: url(${contextPath}/resources/assets/img/main-bg.jpg) no-repeat center top">
+  <body>
 	<header>
 		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 			<div class="navigation">
@@ -77,11 +77,11 @@
 	
 	<div class="container">
 	<h2 style="color: #FF0000">${error} </h2>
-		<div class="col-lg-8 col-lg-offset-3">
+		<div class="col-lg-8 col-lg-offset-3" style="color: #fd680e">
 			<div>
 			
-			<!-- <h1 style="color: #008000">Gettin' Hitched Registration</h1> -->
-			<h1 style="color: #fd680e">Gettin' Hitched Registration</h1>
+			<!-- <h1 style="color: #fd680e">Gettin' Hitched Registration</h1> -->
+			<h1>Gettin' Hitched Registration</h1>
 			    <c:if test="${empty error}">
 			    
 				<c:if test="${empty message}">
@@ -107,9 +107,10 @@
 	</div>
 	
 <%-- <form id="signupForm" method="post"  action="signupMember">      --%>               
- 	<form id="signup" method="post"  action="signup">                    
+ 	<form id="signup" method="post"  action="signup" >                    
       <div class="contact-form">
               <div class="container">
+              <h4>
                                   
                       <div class="col-md-5">
                            <div class="form-group">
@@ -177,6 +178,7 @@
 								 				
 		                              </div>
                                   </div> 
+                                  </h4>
               </div>
        </div>         
            

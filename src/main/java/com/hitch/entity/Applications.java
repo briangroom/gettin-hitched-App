@@ -1,20 +1,19 @@
 package com.hitch.entity;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "apps")
 public class Applications {
+
+	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 
 	@Column(name="appName")
 	private String appName;
@@ -59,8 +58,14 @@ public class Applications {
 	@Column(name="weddingWebsite")
 	private String weddingWebsite;
 
-	/*@Column(name="reviews")
-	private List reviews;*/
+	@Column(name="overallRating")
+	private String overallRating;
+
+	@Column(name="review")
+	private String review;
+
+	@Column(name="enteredBy")
+	private String enteredBy;
 
 	public String getAppName() {
 		return appName;
@@ -174,13 +179,30 @@ public class Applications {
 		this.weddingWebsite = weddingWebsite;
 	}
 
-	/*public List getReviews() {
-		return reviews;
+	public String getOverallRating() {
+		return overallRating;
 	}
 
-	public void setReviews(List reviews) {
-		this.reviews = reviews;
-	}*/
+	public void setOverallRating(String overallRating) {
+		this.overallRating = overallRating;
+	}
+
+	public String getReview() {
+		return review;
+	}
+
+	public void setReview(String review) {
+		this.review = review;
+	}
+
+	public String getEnteredBy() {
+		return enteredBy;
+	}
+
+	public void setEnteredBy(String enteredBy) {
+		this.enteredBy = enteredBy;
+	}
+
 
 	
 

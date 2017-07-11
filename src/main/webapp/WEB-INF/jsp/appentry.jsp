@@ -103,18 +103,11 @@
 		     
 		</div>
 	</div>
-	
+	<h5>
  	<form id="appentry" method="post"  action="appentry">                    
       <div class="contact-form">
               <div class="container">
                                   
-                      <div class="col-md-5">
-                           <div class="form-group">
-                              <label for="an" id='ean' >Application Name*</label>
-                              <input type=text id="appName" name="appName" class="form-control input-sm" placeholder="Application Name" > 
-                           </div>
-                     </div>
-                     
                      <div class="col-md-5" >
                            <div class="form-group">
                               <label for="ws" id='ews' >Website (URL)*</label>
@@ -122,6 +115,13 @@
                            </div>
                       </div>
                       
+                      <div class="col-md-5">
+                           <div class="form-group">
+                              <label for="an" id='ean' >Application Name*</label>
+                              <input type=text id="appName" name="appName" class="form-control input-sm" placeholder="Application Name" > 
+                           </div>
+                     </div>
+                     
                       <div class="col-md-3">
                            <div class="form-group">
                               <label for="dt" id='edt'>Date Tracker</label>
@@ -206,6 +206,29 @@
                            </div>
                      </div>
 				    
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="or" id='ort'>Overall Rating</label>
+                              <input type="text" id="overallRating" name="overallRating"  > 
+                              <!-- <input type=text id="overallRating" name="overallRating" class="form-control input-sm" placeholder="Please enter your review of this website (text up to 100 characters)." > --> 
+                           </div>
+                     </div>
+				    
+                      <div class="col-md-3">
+                           <div class="form-group">
+                              <label for="eb" id='ebt'>Entered By</label>
+                              <input type=text id="enteredBy" name="enteredBy"> 
+                              <!-- <input type=text id="enteredBy" name="enteredBy" class="form-control input-sm" placeholder="Please enter your review of this website (text up to 100 characters)." > --> 
+                           </div>
+                     </div>
+				    
+                      <div class="col-md-10">
+                           <div class="form-group">
+                              <label for="rv" id='rvt'>Review</label>
+                              <input type=text id="review" name="review" class="form-control input-sm" placeholder="Please enter your review of this website (text up to 100 characters)." > 
+                           </div>
+                     </div>
+				    
                      <div class="col-md-12" >
 		                           <div class="form-group">
 		                           
@@ -218,7 +241,7 @@
        </div>         
            
         </form>
-
+</h5>
                     <%-- code for reviews list --%>         
                     <%-- <div class="col-md-2">
 					<label for=reviews>Reviews</label>

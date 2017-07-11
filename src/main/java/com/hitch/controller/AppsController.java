@@ -55,15 +55,15 @@ public class AppsController {
 			return "applications";
 		}
 		try {
-			 appsService.createApp(applications);
+			 /*appsService.createApp(applications);*/
 			model.addAttribute("applications", appsService.getAllApps());
-			model.addAttribute("success", "applications added for " + applications.getAppName() + " Application");
+			/*model.addAttribute("success", "Entry added for " + applications.getAppName() + " Application");*/
 
 		} catch (EmptyResultDataAccessException e) {
 			e.printStackTrace();
 			return "applications";
 		} catch (RuntimeException e) {
-			model.addAttribute("error", "Application Not Added for " + applications.getAppName() + " Application");
+			model.addAttribute("error", "Entry Not Added for " + applications.getAppName() + " Application");
 
 			e.printStackTrace();
 			return "applications";
@@ -91,13 +91,13 @@ public class AppsController {
 		try {
 			 appsService.createApp(applications);
 			model.addAttribute("applications", appsService.getAllApps());
-			model.addAttribute("success", "applications added for " + applications.getAppName() + " Application");
+			model.addAttribute("success", "Entry added for " + applications.getAppName() + " Application");
 
 		} catch (EmptyResultDataAccessException e) {
 			e.printStackTrace();
 			return "appentry";
 		} catch (RuntimeException e) {
-			model.addAttribute("error", "Application Not Added for " + applications.getAppName() + " Application");
+			model.addAttribute("error", "Entry Not Added for " + applications.getAppName() + " Application");
 
 			e.printStackTrace();
 			return "appentry";

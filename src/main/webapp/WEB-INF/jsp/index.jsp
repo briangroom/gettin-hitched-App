@@ -54,8 +54,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<h1>Gettin Hitched App Rater</h1>
-					<h2 class="subtitle">Feel free to browse our wedding app ratings and reviews.</h2>
+					<h1 style="color: darkorange">Gettin Hitched App Rater</h1>
+					<h2 class="subtitle" style="color: black">Feel free to browse our wedding app ratings and reviews.</h2>
 			        <%-- <form class="navbar-form navbar-right" role="search"  action="Lookupcity" method="post">
 						    <div class="input-group add-on">										      
 						      <input type="text" class="form-control" placeholder="Search City or Zip" name="Lookupcity" id="Lookupcity" SIZE='15'>
@@ -79,7 +79,7 @@
 					  <button type="submit" class="btn btn-theme" >browse reviews</button>
 					</form>	 --%>				
 				</div>
-				<div class="col-lg-6 col-lg-offset-2">
+				<div class="col-lg-6 col-md-offset-2">
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					  <ol class="carousel-indicators">
 						<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>

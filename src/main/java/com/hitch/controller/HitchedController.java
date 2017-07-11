@@ -122,7 +122,7 @@ public class HitchedController {
 				if (userLogin.getPassword().equals(userLogin.getPasswordConfirm())) {
 					hitchedService.createUser(userLogin);
 					model.addAttribute("message",
-							"Welcome " + userLogin.getFname() + " Login now <a href='login'>Login </a>");
+							"Welcome " + userLogin.getFname() +", please " + " <a href='login'> Login </a>");
 
 					try {
 						/*sendMail.sendMails(userLogin.getEmailAddress(), "Welcome to wellness ", msg);*/
